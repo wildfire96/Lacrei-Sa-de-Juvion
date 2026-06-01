@@ -70,6 +70,32 @@ O projeto foi otimizado sob rígidos padrões de qualidade para obter pontuaçõ
 
 ---
 
+### 🌐 Deploy & CI/CD
+A aplicação está configurada para deploy contínuo através da plataforma **Vercel** conectado ao repositório GitHub.
+* **Ambiente de Produção:** O deploy ocorre automaticamente a cada `git push` ou merge efetuado na branch `main`.
+* **Ambiente de Staging / Preview:** Toda branch secundária aberta em um Pull Request gera um ambiente de preview isolado para testes rápidos.
+
+### 🔄 Procedimento de Rollback (Reversão)
+Caso ocorra uma regressão em produção, a estratégia de reversão é simples e segura:
+1. **Pelo Painel da Vercel:**
+   * Acesse o Dashboard da Vercel → Vá em **Deployments**.
+   * Identifique o último deployment estável.
+   * Clique nos três pontos (...) ao lado dele e selecione **Promote to Production** (Promover para Produção). Isso reverte a versão de produção instantaneamente sem necessidade de nova build.
+2. **Via Linha de Comando (Git):**
+   * Reverta o último commit localmente: `git revert HEAD` ou volte para a versão estável específica.
+   * Faça o push para a branch `main`: `git push origin main`. A Vercel construirá e implantará a versão estável anterior automaticamente.
+
+### 💡 Justificativas Técnicas & Arquitetura
+As excelentes notas de performance e UX foram fruto de escolhas arquiteturais estratégicas:
+1. **Componentização & Code-Splitting:** A página inicial original continha mais de 1100 linhas em um único arquivo, gerando grande peso de processamento no thread principal. Dividimos em 7 subcomponentes focados na pasta `src/components/home/`.
+2. **Lazy Hydration com `next/dynamic`:** Importamos de forma assíncrona os componentes que ficam abaixo da dobra inicial da página (como *LocationSection*, *AboutUsSection* e *HowItWorksSection*). Isso reduz o **TBT (Total Blocking Time)** de 3.8s para milissegundos, pois o navegador só carrega e hidrata esses blocos quando necessário.
+3. **Otimização Crítica do LCP (Largest Contentful Paint):**
+   * Substituímos o uso de imagens de fundo via CSS por tags `<Image priority fill />` nativas do Next.js na Hero, tornando a imagem prioritária e imediatamente descoberta no HTML inicial.
+   * Removemos o atributo de carregamento tardio (`loading="lazy"`) das ilustrações de ações de perfil na dobra mobile superior, adicionando `fetchpriority="high"`, eliminando penalidades de LCP na tela do celular.
+4. **HTML Semântico Rigoroso:** O uso correto das tags estruturais (`<header>`, `<main>`, `<section>`, `<footer>` e a hierarquia de `<h1>` a `<h3>`) garantiu pontuações máximas de SEO e Acessibilidade (100 e 96), permitindo que leitores de tela naveguem com clareza impecável.
+
+---
+
 ## 🇺🇸 English
 
 ### 📝 About the Project
@@ -130,3 +156,31 @@ The project was optimized under strict quality standards to achieve exceptional 
    ```bash
    npm run start
    ```
+
+---
+
+### 🌐 Deploy & CI/CD
+The application is configured for continuous deployment using the **Vercel** platform linked to the GitHub repository.
+* **Production Environment:** Deployments occur automatically on every `git push` or merge to the `main` branch.
+* **Staging / Preview Environment:** Any secondary branch opened in a Pull Request triggers an isolated preview environment for rapid validation.
+
+### 🔄 Rollback Procedure
+If a regression occurs in production, the rollback strategy is quick and safe:
+1. **Via the Vercel Dashboard:**
+   * Navigate to the Vercel Dashboard → Go to **Deployments**.
+   * Identify the latest stable deployment.
+   * Click on the three dots (...) next to it and select **Promote to Production**. This rolls back the production version instantly without rebuilding.
+2. **Via Command Line (Git):**
+   * Revert the latest commit locally: `git revert HEAD` or checkout the specific stable commit.
+   * Push to the `main` branch: `git push origin main`. Vercel will automatically build and deploy the reverted stable code.
+
+### 💡 Technical Justifications & Architecture
+The excellent performance and UX scores are the result of strategic architectural decisions:
+1. **Componentization & Code-Splitting:** The original landing page contained over 1100 lines of code in a single file, adding significant evaluation overhead to the main thread. We modularized it into 7 focused subcomponents inside the `src/components/home/` folder.
+2. **Lazy Hydration with `next/dynamic`:** We asynchronously imported components below the initial fold (such as *LocationSection*, *AboutUsSection*, and *HowItWorksSection*). This slashed **TBT (Total Blocking Time)** from 3.8s to milliseconds by preventing unnecessary JavaScript execution on initial load.
+3. **Critical LCP (Largest Contentful Paint) Optimization:**
+   * We replaced CSS background images with Next.js native `<Image priority fill />` tags in the Hero section, rendering the LCP image priority and discoverable immediately in the initial HTML document.
+   * We removed the `loading="lazy"` attribute from profile cards on the mobile fold, adding `fetchpriority="high"`, avoiding LCP delays on smaller screens.
+4. **Strict Semantic HTML:** The precise usage of structural HTML5 tags (`<header>`, `<main>`, `<section>`, `<footer>`, and heading hierarchy from `<h1>` to `<h3>`) ensured perfect SEO and Accessibility scores (100 and 96), enabling assistive screen readers to navigate seamlessly.
+
+---
