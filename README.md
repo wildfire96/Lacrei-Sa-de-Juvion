@@ -71,7 +71,7 @@ O projeto foi otimizado sob rígidos padrões de qualidade para obter pontuaçõ
 ---
 
 ### 🌐 Deploy & CI/CD
-A aplicação está configurada para deploy contínuo através da plataforma **Vercel** conectado ao repositório GitHub.
+A aplicação está configurada para deploy contínuo através da plataforma **Vercel** conectado ao repositório [GitHub](https://github.com/wildfire96/Lacrei-Sa-de-Juvion).
 * **Link de Produção:** [lacrei-sa-de-juvion.vercel.app](https://lacrei-sa-de-juvion.vercel.app/)
 * **Ambiente de Produção:** O deploy ocorre automaticamente a cada `git push` ou merge efetuado na branch `main`.
 * **Ambiente de Staging / Preview:** Toda branch secundária aberta em um Pull Request gera um ambiente de preview isolado para testes rápidos.
@@ -161,7 +161,7 @@ The project was optimized under strict quality standards to achieve exceptional 
 ---
 
 ### 🌐 Deploy & CI/CD
-The application is configured for continuous deployment using the **Vercel** platform linked to the GitHub repository.
+The application is configured for continuous deployment using the **Vercel** platform linked to the [GitHub](https://github.com/wildfire96/Lacrei-Sa-de-Juvion) repository.
 * **Production Link:** [lacrei-sa-de-juvion.vercel.app](https://lacrei-sa-de-juvion.vercel.app/)
 * **Production Environment:** Deployments occur automatically on every `git push` or merge to the `main` branch.
 * **Staging / Preview Environment:** Any secondary branch opened in a Pull Request triggers an isolated preview environment for rapid validation.
