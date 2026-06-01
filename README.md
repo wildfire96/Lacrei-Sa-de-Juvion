@@ -41,6 +41,9 @@ O projeto foi otimizado sob rígidos padrões de qualidade para obter pontuaçõ
 * **Estilização:** Styled-Components
 * **Otimizações:** `next/dynamic` para lazy hydration, `next/image` para otimização de imagens, tags semânticas completas e acessibilidade WAI-ARIA.
 
+### ♿ Acessibilidade (NVDA)
+* ♿ **Verificação Prática:** Toda a interface foi testada e aprovada com sucesso utilizando o leitor de telas **NVDA**, garantindo navegação fluida por teclado, leitura correta de labels estruturais e total conformidade com tecnologias assistivas.
+
 ---
 
 ### 💻 Como Executar Localmente
@@ -100,6 +103,9 @@ The project was optimized under strict quality standards to achieve exceptional 
 * **Framework:** Next.js (App Router)
 * **Styling:** Styled-Components
 * **Optimizations:** `next/dynamic` for lazy hydration, `next/image` for image optimization, full semantic HTML tags, and WAI-ARIA accessibility.
+
+### ♿ Accessibility (NVDA)
+* ♿ **Practical Verification:** The entire user interface was successfully tested and approved using the **NVDA** screen reader, ensuring seamless keyboard navigation, correct reading of structural labels, and full compliance with assistive technologies.
 
 ---
 
