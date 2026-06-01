@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "SVG & Style Extractor (Opera GX)",
+  "version": "1.0",
+  "description": "Extraia SVGs, imagens, cores e tipografia com um clique em qualquer elemento! Visual Gamer HUD.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "SVG & Style Extractor"
+  }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    :root {
+      --bg-color: #0a0a0c;
+      --panel-color: #121216;
+      --accent-color: #00ff66;
+      --text-color: #e2e2e8;
+      --text-muted: #7e7e8a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 280px;
+      background-color: var(--bg-color);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-color);
+      padding: 16px;
+      overflow: hidden;
+      border: 1px solid #1a1a24;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .title {
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-color);
+    }
+
+    .title span {
+      color: var(--accent-color);
+    }
+
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--text-muted);
+      background: rgba(0, 255, 102, 0.05);
+      padding: 4px 8px;
+      border-radius: 2px;
+      border: 1px solid rgba(0, 255, 102, 0.1);
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--text-muted);
+    }
+
+    .status-badge.active .status-dot {
+      background-color: var(--accent-color);
+      box-shadow: 0 0 8px var(--accent-color);
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+
+    .btn-toggle {
+      width: 100%;
+      background: var(--panel-color);
+      color: var(--text-color);
+      border: 1.5px solid #22222e;
+      padding: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-toggle:hover {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 12px rgba(0, 255, 102, 0.15);
+      background: rgba(0, 255, 102, 0.02);
+      color: var(--accent-color);
+    }
+
+    .btn-toggle:active {
+      transform: scale(0.98);
+    }
+
+    .btn-toggle.active {
+      background: var(--accent-color);
+      color: #000000;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
+    }
+
+    .help-text {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-top: 12px;
+      text-align: center;
+      background: #111115;
+      padding: 8px;
+      border-radius: 2px;
+      border-top: 1px solid #1a1a24;
+    }
+  </style>
+  <title>SVG Extractor</title>
+</head>
+<body>
+  <div class="header">
+    <h1 class="title">SVG <span>Extractor</span></h1>
+    <div id="statusBadge" class="status-badge">
+      <div class="status-dot"></div>
+      <span id="statusText">Inativo</span>
+    </div>
+  </div>
+
+  <button id="toggleBtn" class="btn-toggle">
+    <span>Ativar Inspetor</span>
+  </button>
+
+  <p class="help-text">
+    Ative o inspetor, passe o mouse sobre qualquer site e dê <b>um clique</b> no elemento desejado para abrir o painel de extração.
+  </p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
