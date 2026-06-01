@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💚 Lacrei Saúde - Projeto Juvion
 
-## Getting Started
+<p align="center">
+  <a href="#-sobre-o-projeto">Português</a> • 
+  <a href="#-about-the-project">English</a>
+</p>
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🇧🇷 Português
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 📝 Sobre o Projeto
+Uma plataforma Next.js de alta performance e totalmente responsiva desenvolvida para conectar a comunidade **LGBTQIAPN+** a profissionais de saúde qualificados de forma inclusiva, segura e acolhedora. O projeto passou por uma auditoria completa de performance e design para entregar a melhor experiência de usuário possível.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🚀 Resultados no PageSpeed Insights
+O projeto foi otimizado sob rígidos padrões de qualidade para obter pontuações excepcionais no Lighthouse.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* 🔗 **Relatório Oficial:** [Análise PageSpeed Insights](https://pagespeed.web.dev/analysis/https-lacrei-sa-de-juvion-vercel-app/dqbn7l6jfz?form_factor=mobile)
+* 🌎 **Aplicação em Produção:** [lacrei-sa-de-juvion.vercel.app](https://lacrei-sa-de-juvion.vercel.app/)
 
-## Learn More
+#### 📱 Mobile Performance
+| Métrica | Pontuação | Status |
+|---|---|---|
+| **Desempenho** | **93** | 🟢 Excelente |
+| **Acessibilidade** | **96** | 🟢 Excelente |
+| **Práticas Recomendadas** | **100** | 🟢 Perfeito |
+| **SEO** | **100** | 🟢 Perfeito |
 
-To learn more about Next.js, take a look at the following resources:
+#### 💻 Desktop Performance
+| Métrica | Pontuação | Status |
+|---|---|---|
+| **Desempenho** | **100** | 🟢 Perfeito |
+| **Acessibilidade** | **96** | 🟢 Excelente |
+| **Práticas Recomendadas** | **100** | 🟢 Perfeito |
+| **SEO** | **100** | 🟢 Perfeito |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🛠️ Tecnologias Utilizadas
+* **Framework:** Next.js (App Router)
+* **Estilização:** Styled-Components
+* **Otimizações:** `next/dynamic` para lazy hydration, `next/image` para otimização de imagens, tags semânticas completas e acessibilidade WAI-ARIA.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 💻 Como Executar Localmente
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+
+2. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Gere a build de produção:**
+   ```bash
+   npm run build
+   ```
+
+4. **Inicie o servidor de produção localmente:**
+   ```bash
+   npm run start
+   ```
+
+---
+
+## 🇺🇸 English
+
+### 📝 About the Project
+A highly performant and fully responsive Next.js platform designed to connect the **LGBTQIAPN+** community with qualified health professionals in an inclusive, safe, and welcoming way. The project went through an extensive performance and design audit to deliver the absolute best user experience.
+
+### 🚀 PageSpeed Insights Results
+The project was optimized under strict quality standards to achieve exceptional Lighthouse scores.
+
+* 🔗 **Official Report:** [PageSpeed Insights Analysis](https://pagespeed.web.dev/analysis/https-lacrei-sa-de-juvion-vercel-app/dqbn7l6jfz?form_factor=mobile)
+* 🌎 **Production Deployment:** [lacrei-sa-de-juvion.vercel.app](https://lacrei-sa-de-juvion.vercel.app/)
+
+#### 📱 Mobile Performance
+| Metric | Score | Status |
+|---|---|---|
+| **Performance** | **93** | 🟢 Excellent |
+| **Accessibility** | **96** | 🟢 Excellent |
+| **Best Practices** | **100** | 🟢 Perfect |
+| **SEO** | **100** | 🟢 Perfect |
+
+#### 💻 Desktop Performance
+| Metric | Score | Status |
+|---|---|---|
+| **Performance** | **100** | 🟢 Perfect |
+| **Accessibility** | **96** | 🟢 Excellent |
+| **Best Practices** | **100** | 🟢 Perfect |
+| **SEO** | **100** | 🟢 Perfect |
+
+---
+
+### 🛠️ Built With
+* **Framework:** Next.js (App Router)
+* **Styling:** Styled-Components
+* **Optimizations:** `next/dynamic` for lazy hydration, `next/image` for image optimization, full semantic HTML tags, and WAI-ARIA accessibility.
+
+---
+
+### 💻 Getting Started
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Build the production application:**
+   ```bash
+   npm run build
+   ```
+
+4. **Start the production server locally:**
+   ```bash
+   npm run start
+   ```
